@@ -46,7 +46,27 @@ public class Game {
                     System.out.println("Lütfen geçerli bir bölge giriniz.");
 
             }
+
             System.out.println("=============================================");
+
+            if (selectLoc == 3 && new Cave(player).getPlayer().getInventory().isFood()){
+                System.out.println("Burasaı tamamlandı.");
+                continue;
+            }
+
+            if (selectLoc == 4 && new Cave(player).getPlayer().getInventory().isFirewood()){
+                System.out.println("Burasaı tamamlandı.");
+                continue;
+            }
+
+            if (selectLoc == 5 && new Cave(player).getPlayer().getInventory().isWater()){
+                System.out.println("Burasaı tamamlandı.");
+                continue;
+            }
+
+            if (new SafeHouse(player).finish()){
+                break;
+            }
             if (location == null) {
                 System.out.println("Oyun bitti yine bekleriz. ");
                 break;

@@ -1,7 +1,10 @@
+import java.util.Random;
 
-    public class Snake extends  Obstacle{
+public class Snake extends  Obstacle{
+        private static final Random random = new Random();
         public Snake() {
-            super(4, "Yılan", (int)(Math.random() * 4), 1, 0);
+
+            super(4, "Yılan",random.nextInt(3,7) , 12, 0);
 
         }
     }
